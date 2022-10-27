@@ -1,0 +1,99 @@
+.drawer {
+  width: 0rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: width 0.5s ease;
+  overflow: hidden;
+}
+
+.drawer.open {
+  width: 20rem;
+}
+
+.drawer form {
+  margin: 1rem;
+}
+
+.drawer h3 {
+  white-space: nowrap;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.form-control input,
+.form-control select {
+  padding: 0.25rem;
+  font-size: 1rem;
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 0.25rem;
+}
+
+.form-control input[type="checkbox"] {
+  height: 1rem;
+  width: 1rem;
+  margin-right: auto;
+  background: red;
+}
+
+.form-control input:focus {
+  outline: 0;
+}
+
+.form-actions {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.form-actions button {
+  height: 2rem;
+  width: 5rem;
+  border-radius: 0.2rem;
+}
+
+.form-actions button:first-child {
+  margin-left: auto;
+  background: none;
+  border: 1px solid rgb(220, 220, 220);
+}
+
+.form-actions button:nth-child(2) {
+  margin-left: 0.5rem;
+  border: none;
+  background: #1890ff;
+  color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  .drawer {
+    height: 0;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    transition: height 0.5s ease;
+  }
+
+  .drawer.open {
+    height: 20rem;
+    width: calc(100% - 2rem);
+  }
+
+  .drawer form {
+    height: auto;
+  }
+
+  .form-control {
+    display: inline-block;
+    margin: 1rem;
+  }
+}

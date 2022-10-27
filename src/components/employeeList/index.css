@@ -1,0 +1,89 @@
+.employee-list {
+  height: 100%;
+}
+
+.employee-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.employee-list-filters {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+  position: relative;
+}
+
+.employee-list-filters span {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-45%);
+  color: rgb(99, 99, 99);
+  font-size: 0.9rem;
+}
+
+.employee-list-filters input {
+  height: 100%;
+  width: 20rem;
+  padding: 1rem;
+  padding-left: 3rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: rgb(99, 99, 99);
+}
+
+.employee-list-filters input:focus {
+  outline: none;
+}
+
+.employee-list-body {
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+}
+
+.employee-list-content {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+}
+
+.add-employee-btn {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 1rem;
+  background: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #1890ff;
+  border: 1px solid #1890ff;
+  cursor: pointer;
+}
+
+.add-employee-btn:hover {
+  background: #eef7ff;
+}
+
+.add-employee-btn span {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .employee-list-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .App {
+    grid-template-columns: 12rem 1fr;
+  }
+}

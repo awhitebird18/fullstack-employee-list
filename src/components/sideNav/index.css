@@ -1,0 +1,49 @@
+.side-nav {
+  border-right: 1px solid rgb(220, 220, 220);
+}
+
+.side-nav .logo {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  background: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.side-nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  height: calc(100vh - 4rem);
+}
+
+.side-nav ul li {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 1rem;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  cursor: pointer;
+}
+
+.side-nav ul li span {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.side-nav ul li.current {
+  background: #1890ff;
+  color: #fff;
+}
+
+.side-nav ul li:last-child {
+  margin-top: auto;
+  border-top: 1px solid rgb(220, 220, 220);
+}
+
+.side-nav ul li:hover {
+  filter: brightness(95%);
+}
