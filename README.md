@@ -1,31 +1,20 @@
-# Plexxis Interview Exercise
-## Requirements
-Create a simple but __impressive__ (looks good, works well, has intuitive design, etc.) CRUD application that can do the following:
+# Fullstack Employee List Exercise
 
-1) Retrieve employees from a REST API  
-2) Display the employees in a React application  
-3) Has UI mechanisms for creating and deleting employees  
-4) Has API endpoints for creating and deleting employees  
-5) Edit your version of the `README.md` file to explain to us what things you did, where you focussed your effort, etc.
+## Summary
 
-*Read over the `Bonus` objectives and consider tackling those items as well*
+Within this full stack React application, the user is able to view the list of employees that is retrieved from a database. Being a full CRUD application, the use is able to interact with the employee data by adding, updating, and deleting employee data which will immediately update the UI as well as the database.
 
-## Bonus (Highly Encouraged)
+## Features
 
-1) Use a relational database to store the data (SQLite, MariaDB, Postgres)  
-2) UI mechanisms to edit/update employee data  
-3) Add API endpoint to update employee data  
-4) Use [React Table](https://react-table.js.org)  
+- Employee data is stored within a Postgres Database
+- Users are able to read, add, update, and delete employee data
+- Employee data is displayed using "React-Table"
+- Contains a basic application layout
+- Allows users to filter table by employee name
+- Basic responsiveness to accomodate for window size
 
-## Getting Started
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). The front-end app runs off localhost:3000. The REST API is located in the /server folder and runs off localhost:8080. The data is being served from a JSON file located in the /server/data folder. Run `npm start` to start both servers.
+## Instructions
 
-## Getting it Done
-* You are free to use whatever libraries that you want. Be prepared to defend your decisions.
-* There is no time limit. Use as little or as much time as is necessary to showcase your abilities.
-* You should fork or clone our repository into your own repository.
-  * Send us the link when you are done the exercise (pglinker at plexxis dot com).
-
-If you do well on the test, we will bring you in for an interview. Your test results will be used as talking points.  
-
- __This is your chance to amaze us with your talent!__
+- To view/update employee details, click on the the employees row. This will open an details section to allow the user to view and edit the selected employee.
+- Upon adjusting employee data, the user may click the save button to send those changes to the database and udpate the UI. A cancel button is provided to cancel any changes made.
+- Top-right corner of the application will display an "Add Employee" button to add employees to the table.
