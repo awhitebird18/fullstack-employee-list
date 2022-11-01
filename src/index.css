@@ -9,4 +9,18 @@ body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
     Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
+  font-size: 1.3vmin;
+  width: 100vw;
+}
+
+p,
+button,
+input::placeholder,
+input,
+select {
+  font-size: 1.3vmin;
+}
+
+h1 {
+  font-size: 2.5vh;
 }

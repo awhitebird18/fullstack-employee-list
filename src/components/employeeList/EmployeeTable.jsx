@@ -47,7 +47,7 @@ const EmployeeTable = ({
         Header: "Color",
         accessor: "color",
         Cell: ({ value }) => (
-          <div style={{ backgroundColor: value }} class="color-icon"></div>
+          <div style={{ backgroundColor: value }} className="color-icon"></div>
         ),
       },
     ],
@@ -64,11 +64,13 @@ const EmployeeTable = ({
       {
         id: "Delete",
         Header: "",
+
         Cell: ({ row }) => {
           return (
             <button
               className="delete-employee-btn"
               onClick={(e) => handleDelete(e, row.original.id)}
+              style={{ width: "min-content" }}
             >
               Delete
             </button>
@@ -81,7 +83,7 @@ const EmployeeTable = ({
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data }, tableHooks);
 
-  //   Update employee handler
+  // Set Employee to Update
   const handleUpdateEmployee = (id) => {
     const employee = employees.find((employee) => {
       return employee.id === id;
@@ -91,7 +93,7 @@ const EmployeeTable = ({
     setDrawerOpen(true);
   };
 
-  // Delete employee handler
+  // Delete Employee
   const handleDelete = async (e, id) => {
     e.stopPropagation();
 
@@ -110,7 +112,7 @@ const EmployeeTable = ({
         name: "",
         code: "",
         profession: "",
-        color: "",
+        color: "#ffffff",
         city: "",
         branch: "",
         assigned: false,
@@ -134,6 +136,7 @@ const EmployeeTable = ({
                   color: "black",
                   fontWeight: "bold",
                 }}
+                className="table-header"
               >
                 {column.render("Header")}
               </th>
@@ -157,12 +160,7 @@ const EmployeeTable = ({
               >
                 {row.cells.map((cell) => {
                   return (
-                    <td
-                      {...cell.getCellProps()}
-                      style={{
-                        padding: "10px",
-                      }}
-                    >
+                    <td {...cell.getCellProps()} className="table-cell">
                       {cell.render("Cell")}
                     </td>
                   );

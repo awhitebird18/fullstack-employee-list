@@ -9,6 +9,7 @@ const EmployeeDetails = ({
   formData,
   setFormData,
 }) => {
+  // Update Current Employee
   const handleChange = (e, field) => {
     e.persist();
 
@@ -26,6 +27,7 @@ const EmployeeDetails = ({
     });
   };
 
+  // On form submit, add new employee to db and update state
   const handleAddEmployee = async (e) => {
     e.preventDefault();
 
@@ -50,7 +52,7 @@ const EmployeeDetails = ({
           name: "",
           code: "",
           profession: "",
-          color: "",
+          color: "#ffffff",
           city: "",
           branch: "",
           assigned: "True",
@@ -63,6 +65,7 @@ const EmployeeDetails = ({
     }
   };
 
+  // On form submit, update employee in db and update state
   const handleUpdateEmployee = async (e) => {
     e.preventDefault();
 
@@ -93,7 +96,7 @@ const EmployeeDetails = ({
           name: "",
           code: "",
           profession: "",
-          color: "",
+          color: "#ffffff",
           city: "",
           branch: "",
           assigned: false,
@@ -106,6 +109,7 @@ const EmployeeDetails = ({
     }
   };
 
+  // On cancel, resets current employee object
   const handleCancel = (e) => {
     e.preventDefault();
 
@@ -113,7 +117,7 @@ const EmployeeDetails = ({
       name: "",
       code: "",
       profession: "",
-      color: "",
+      color: "#ffffff",
       city: "",
       branch: "",
       assigned: false,
@@ -121,10 +125,6 @@ const EmployeeDetails = ({
 
     setDrawerOpen(false);
   };
-
-  if (!formData) {
-    return null;
-  }
 
   return (
     <div className={`drawer ${drawerOpen ? "open" : ""}`}>
@@ -146,8 +146,9 @@ const EmployeeDetails = ({
         </div>
 
         <div className="form-control">
-          <label htmlFor="">Name</label>
+          <label htmlFor="name">Name</label>
           <input
+            id="name"
             type="text"
             value={formData.name}
             onChange={(e) => {
@@ -157,8 +158,9 @@ const EmployeeDetails = ({
         </div>
 
         <div className="form-control">
-          <label htmlFor="">Profession</label>
+          <label htmlFor="profession">Profession</label>
           <input
+            id="profession"
             type="text"
             value={formData.profession}
             onChange={(e) => {
@@ -168,8 +170,9 @@ const EmployeeDetails = ({
         </div>
 
         <div className="form-control">
-          <label htmlFor="">City</label>
+          <label htmlFor="city">City</label>
           <input
+            id="city"
             type="text"
             value={formData.city}
             onChange={(e) => {
@@ -179,8 +182,9 @@ const EmployeeDetails = ({
         </div>
 
         <div className="form-control">
-          <label htmlFor="">Branch</label>
+          <label htmlFor="branch">Branch</label>
           <select
+            id="branch"
             type="text"
             value={formData.branch}
             onChange={(e) => {
@@ -193,30 +197,33 @@ const EmployeeDetails = ({
           </select>
         </div>
 
-        <div
-          className="form-control"
-          style={{ display: "inline-block", marginRight: "1rem" }}
-        >
-          <label htmlFor="">Assigned?</label>
-          <input
-            type="checkbox"
-            checked={formData.assigned}
-            onChange={(e) => {
-              handleChange(e, "assigned");
-            }}
-          />
-        </div>
+        <div style={{ whiteSpace: "nowrap", display: "inline-block" }}>
+          <div
+            className="form-control"
+            style={{ display: "inline-block", marginRight: "1rem" }}
+          >
+            <label htmlFor="assigned">Assigned?</label>
+            <input
+              id="assigned"
+              type="checkbox"
+              checked={formData.assigned}
+              onChange={(e) => {
+                handleChange(e, "assigned");
+              }}
+            />
+          </div>
 
-        <div className="form-control" style={{ display: "inline-block" }}>
-          <label htmlFor="color">Color</label>
-          <input
-            id="color"
-            type="color"
-            value={formData.color}
-            onChange={(e) => {
-              handleChange(e, "color");
-            }}
-          />
+          <div className="form-control" style={{ display: "inline-block" }}>
+            <label htmlFor="color">Color</label>
+            <input
+              id="color"
+              type="color"
+              value={formData.color}
+              onChange={(e) => {
+                handleChange(e, "color");
+              }}
+            />
+          </div>
         </div>
 
         <div className="form-actions">

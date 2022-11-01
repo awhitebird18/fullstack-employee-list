@@ -1,14 +1,16 @@
 .drawer {
   width: 0rem;
   background: #fff;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem 0 0 0.5rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   transition: width 0.5s ease;
   overflow: hidden;
+  height: max-content;
+  height: 100%;
 }
 
 .drawer.open {
-  width: 20rem;
+  width: 16rem;
 }
 
 .drawer form {
@@ -35,7 +37,6 @@
 .form-control input,
 .form-control select {
   padding: 0.25rem;
-  font-size: 1rem;
   border: 1px solid rgb(185, 185, 185);
   border-radius: 0.25rem;
 }
@@ -77,15 +78,16 @@
 
 @media screen and (max-width: 1200px) {
   .drawer {
-    height: 0;
+    max-height: 0;
     width: calc(100% - 2rem);
     margin: 1rem;
-    transition: height 0.5s ease;
+    transition: max-height 0.5s ease;
+    border-radius: 0.5rem;
   }
 
   .drawer.open {
-    height: 20rem;
-    width: calc(100% - 2rem);
+    max-height: 23rem;
+    width: calc(100% - 2rem) !important;
   }
 
   .drawer form {
@@ -94,6 +96,27 @@
 
   .form-control {
     display: inline-block;
-    margin: 1rem;
+    margin: 0.5rem;
+  }
+
+  .form-control input[type="checkbox"] {
+    height: 0.75rem;
+    width: 0.75rem;
+    margin-right: auto;
+    background: red;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form-actions button {
+    height: 1.2rem;
+    width: 2.5rem;
+    border-radius: 0.2rem;
+  }
+
+  .form-control input[type="color"] {
+    height: 1.2rem;
+    width: 1.2rem;
+    padding: 0rem;
   }
 }

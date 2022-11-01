@@ -5,25 +5,27 @@ import "./index.css";
 const SideNav = () => {
   return (
     <nav className="side-nav">
-      <div className="logo">Plexxis</div>
+      <div>
+        <h1 className="logo">Plexxis</h1>
+      </div>
       <ul>
         <li>
           <span>
             <BsGrid1X2 />
           </span>
-          Dashboard
+          <p>Dashboard</p>
         </li>
         <li className="current">
           <span>
             <BsPeopleFill />
           </span>
-          Employee List
+          <p>Employee List</p>
         </li>
         <li>
           <span>
             <BsArrowBarLeft />
           </span>
-          Logout
+          <p>Logout</p>
         </li>
       </ul>
     </nav>

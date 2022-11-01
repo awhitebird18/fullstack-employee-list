@@ -41,7 +41,7 @@ const getEmployeeById = async (req, res) => {
 const addEmployee = async (req, res) => {
   try {
     const { name, code, profession, color, city, branch, assigned } = req.body;
-    console.log(req.body);
+
     const employee = await pool.query(
       "INSERT INTO employees (name, code, profession, color, city, branch, assigned) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
       [name, code, profession, color, city, branch, assigned]
@@ -91,7 +91,6 @@ const updateEmployee = async (req, res) => {
       data: employee.rows[0],
     });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       status: "fail",
       message: "Failed to update employee.",

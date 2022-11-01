@@ -1,5 +1,5 @@
 import React from "react";
-import EmployeeList from "./components/employeeList/index.js";
+import EmployeeList from "./components/employeeList/index.jsx";
 import SideNav from "./components/sideNav";
 import "./App.css";
 

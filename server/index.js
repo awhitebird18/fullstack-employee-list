@@ -3,8 +3,6 @@ const cors = require("cors");
 require("dotenv").config();
 const employeeRoutes = require("./routes/employeeRoutes.js");
 
-console.log(process.env);
-
 const app = express();
 
 const corsOptions = {

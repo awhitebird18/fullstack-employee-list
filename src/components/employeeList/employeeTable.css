@@ -1,9 +1,9 @@
 .employee-list-table {
-  height: min-content;
   background: #fff;
   border-radius: 0.5rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin: 0 1rem;
+  height: min-content;
 }
 
 .employee-list-table tbody tr:hover {
@@ -37,4 +37,21 @@
   width: 1.5rem;
   margin: auto;
   border-radius: 50%;
+}
+
+.table-cell,
+.table-header {
+  padding: 15px 10px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .table-cell,
+  .table-header {
+    padding: 5px !important;
+  }
+
+  .color-icon {
+    height: 1rem;
+    width: 1rem;
+  }
 }
